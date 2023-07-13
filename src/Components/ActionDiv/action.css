@@ -1,0 +1,19 @@
+.ActionDiv{
+    width: 80%;
+    height: 130px;
+    margin: auto;
+    border: 1px solid black;
+}
+.ActionDiv h1{
+    margin: auto;
+}
+.btns{
+    display: flex;
+    justify-content: space-around;
+}
+.btns button{
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: rgb(145, 192, 193);
+}

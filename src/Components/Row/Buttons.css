@@ -1,0 +1,19 @@
+.buttons{
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+.buutonDiv{
+    display:flex;
+    justify-content: center;
+    gap: 10%;
+    padding:40px;
+    margin: auto;
+}
+.buutonDiv button{
+    border: none;
+    width: 140px;
+    height: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

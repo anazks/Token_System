@@ -20,7 +20,7 @@
 }
 .inner{
     width: auto;
-    height: 70%;
+    height: 600px;
     overflow-x:hidden;
     overflow-y: scroll;
    background-color: transparent;

@@ -76,6 +76,7 @@ function Display() {
 
                     <div>
                     <h1>Now serving</h1>
+                    <div className='inner'>
                     
                     {
                         
@@ -94,6 +95,7 @@ function Display() {
                             )
                         })
                     }
+                    </div>
                     </div>
         
     </div>

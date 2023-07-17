@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './display.css'
-import Axios from '../../Axios/Axios'
-function Display() {
-    const [token, setTokcen] = useState([])
-    const [calledToken,setCalledToken] = useState([])
-    const [pendingToken,setpendingToken] = useState([])
-    const [NowServing,setNowServing] = useState([])
-    useEffect(() => {
-        Axios.get('/All_Tokens').then((response)=>{
-          console.log(response.data)
-          setTokcen(response.data)
-          setCalledToken(response.data.filter(obj=>obj.call_status == true))
-          console.log(calledToken,"---")
-          setpendingToken(response.data.filter(obj=>obj.call_status == false))
-        })
-        Axios.get('/TokenDisplay').then((res)=>{
-            setNowServing(res.data)
-        })
-    }, [])
+function Display({calledToken,pendingToken,NowServing}) {
+//    const Token = prop.token;
+    const calledTokens = calledToken   ;
+    // const pendingToken = prop.pendingToken;
+    // const NowServing = prop.NowServing;
     
   return (
     <div className='Display'>
@@ -28,7 +15,7 @@ function Display() {
        {
        
        
-       calledToken.map((obj)=>{
+       calledTokens.map((obj)=>{
                return(
                    <>
                                    
@@ -53,7 +40,7 @@ function Display() {
                     <h1>Pending Tokens</h1>
                     <div className='inner'>
                     
-                    {
+                     {
                         
                         pendingToken.map((obj)=>{
                             return(
@@ -94,7 +81,7 @@ function Display() {
                                 </>
                             )
                         })
-                    }
+                    } 
                     </div>
                     </div>
         

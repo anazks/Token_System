@@ -17,17 +17,28 @@ const style = {
   p: 4,
 };
 
-function Buttons() {
+function Buttons({getAllToken,nowServing}) {
   const [open, setOpen] = React.useState(false);
   const [newToken,setNewToken] = useState([])
   
   const handleClose = () => setOpen(false);
+
   const generateToken=()=>{
     Axios.get('/Generate_Token').then((response)=>{
       setNewToken(response.data);
       setOpen(true)
+      getAllToken();
+      nowServing();
     })
   }
+  const callToken =()=>{
+      Axios.post('/TokenCount').then((res)=>{
+        console.log("token called successfully");
+        getAllToken();
+        nowServing();
+      })
+  }
+
   return (
     <div className='buttons'>
             <div className='buutonDiv'>
@@ -36,7 +47,7 @@ function Buttons() {
                     {/* <Button onClick={handleOpen}>Open modal</Button> */}
                     <button>UTILITY</button>
                     <button>HISTORY</button>
-                    <button>LOGOUT</button>
+                    <button style={{backgroundColor:"green"}} onClick={callToken}>CALL TOKEN</button>
             </div>
 {
       <Modal
